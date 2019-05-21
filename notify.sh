@@ -2,14 +2,14 @@
 
 set -euo pipefail
 
-TYPE=$1  # shellcheck disable=SC2034
-NAME=$2  # shellcheck disable=SC2034
-ENDSTATE=$3
-
-if [ -z "$ENDSTATE" ]; then
+if [ -z "$3" ]; then
   echo "error: call with arguments TYPE NAME ENDSTATE" >&2
   exit 1
 fi
+
+TYPE=$1
+NAME=$2
+ENDSTATE=$3
 
 if [ -z "$HCLOUD_TOKEN" ]; then
   echo "error: HCLOUD_TOKEN not set" >&2
