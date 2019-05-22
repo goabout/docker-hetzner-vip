@@ -26,7 +26,6 @@ if [ -z "$FLOATING_IP" ]; then
   exit 1
 fi
 
-set -x
 if [ "$STATE" = "MASTER" ] ; then
   SERVER_ID=$(hcloud server list -o noheader -o columns=name,id | grep "^$NODE_NAME\>" | awk '{print $2}')
   FLOATING_IP_ID=$(hcloud floating-ip list -o noheader -o columns=ip,id | grep "^$FLOATING_IP\>" | awk '{print $2}')
