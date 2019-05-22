@@ -10,5 +10,4 @@ RUN cd /tmp && \
     rm -fr hcloud-linux-amd64-v${HCLOUD_VERSION} hcloud-linux-amd64-v${HCLOUD_VERSION}.tar.gz
 
 ENV KEEPALIVED_NOTIFY=/usr/local/bin/notify
-RUN useradd keepalived_script
 ADD notify.sh /usr/local/bin/notify
